@@ -70,5 +70,12 @@ contract Casino {
             if(winners[j] != address(0))
                 winners[j].transfer(winnerEtherAmount);
         }
+        resetData();
     }
+
+    function resetData() internal{
+        players.length = 0; // Delete all the players array
+        totalBet = 0;
+        numberOfBets = 0;
+}
 }
